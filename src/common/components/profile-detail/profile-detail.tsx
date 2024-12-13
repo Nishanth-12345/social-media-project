@@ -3,7 +3,7 @@ import './profileDetailStyles.scss'
 import { images } from '../../constants/image';
 
 interface ProfileDetailProps {
-    name: string;
+    name?: string;
     image: string;
     className?: string;
 }

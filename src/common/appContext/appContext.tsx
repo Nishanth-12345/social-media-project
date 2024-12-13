@@ -3,7 +3,7 @@ import { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, create
 import { auth, db } from '../firebase/firebase';
 import { addDoc, collection, getDocs, onSnapshot, query, where } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-interface UserData {
+export interface UserData {
   uid: string;
   name: string;
   email: string;
@@ -125,11 +125,7 @@ const AppContext: FC<AppContextProps> = ({ children }) => {
 
   useEffect(() => {
     userState();
-    if (user || userData) {
-      navigate("/");
-    } else {
-      navigate('/login');
-    }
+ 
 
     return () => {
       userState();

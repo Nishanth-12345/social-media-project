@@ -20,8 +20,8 @@ function App() {
     <Router>
       <AppContext>
         <Routes>
-          <Route path='/' element={<RegisterContainer />} />
-          <Route path='/feeds' element={<HomeContainer />} />
+          <Route path='/r' element={<RegisterContainer />} />
+          <Route path='/' element={<HomeContainer />} />
           <Route path='/p' element={<ProfileContainer />} />
           <Route path='/e' element={<EditProfile />} />
           <Route path='/c' element={<CreatePostContainer />} />

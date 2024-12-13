@@ -2,13 +2,16 @@ import React, { FC, useState } from 'react';
 import './profileStyles.scss';
 import { IconSvg, images } from '../../../common/constants/image';
 import MyPost from '../components/my-post';
+import { User } from 'firebase/auth';
+import { UserData } from '../../../common/appContext/appContext';
 
 interface ProfileProps {
-
+ user: User | null;
+  userData: UserData | null;
 }
 
 const Profile: FC<ProfileProps> = (props) => {
-    const { } = props;
+    const { user, userData } = props;
 
     const [sharePost, setSharePost] = useState<boolean>(false);
 
@@ -35,7 +38,7 @@ const Profile: FC<ProfileProps> = (props) => {
             </div>
             <div className='container'>
                 <div className='description'>
-                    <h1>Sakshi Agarwal</h1>
+                    <h1>{(user?.displayName === null && userData?.name !== undefined) ? userData?.name?.charAt(0).toUpperCase() + userData?.name.slice(1) : user?.displayName?.split(" ")[0]}</h1>
                     <p>Just someone who loves designing, sketching, and finding beauty in the little things 💕</p>
                 </div>
                 <div className='user-posts-container'>
