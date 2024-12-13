@@ -1,0 +1,91 @@
+@import './color';
+
+@import url('https://fonts.googleapis.com/css2?family=Gotu&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700;800&family=Kumbh+Sans:wght@400;500;600;700;800&display=swap');
+
+
+
+input {
+  font-size: 14px;
+
+  &:disabled {
+    background-color: #fafafa;
+    color: #a7a7a7;
+    border-color: #cdcdcd;
+  }
+}
+
+body {
+  font-family: 'kumbh', 'sans';
+  font-size: 16px; // Default font size for paragraphs
+  color: #333; // Default text color
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'karla', sans-serif;
+  font-weight: normal; // Adjust if you want a different weight for headings
+  margin: 0;
+  color: #000;
+}
+
+p {
+  margin: 0;
+  color: #000;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit; // Consistent font across form elements
+}
+
+
+.container {
+  padding: 0 40px;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+.create-post-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border-radius: 50%;
+  right: 16px;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+@media (max-width: 450px) {
+
+  .container {
+    padding: 0 14x;
+  }
+}

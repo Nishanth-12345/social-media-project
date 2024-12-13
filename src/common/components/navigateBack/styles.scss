@@ -1,0 +1,17 @@
+.navigation{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    svg{
+        width: 24px;
+        height: 24px;
+    }
+
+    p{
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000;
+    }
+}

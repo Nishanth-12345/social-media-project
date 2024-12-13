@@ -1,0 +1,37 @@
+.profile-detail{
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 10px;
+
+    .image{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: relative;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .details{
+        p{
+
+            &:first-child{
+                color: #00000054;
+                font-weight: 400;
+                font-size: 12px;
+                font-family: 'kumbh';
+            }
+
+            &:last-child{
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 20px;
+                font-family: 'kumbh';
+            }
+        }
+    }
+}
