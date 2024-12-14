@@ -50,7 +50,7 @@ const Home: FC<HomeProps> = (props) => {
       
       <div className='feeds-container'>
         {
-          posts && posts?.length > 0 ? (
+           posts?.length > 0 ? (
             posts?.map((item,index) => {
               return (
                 <UserPost

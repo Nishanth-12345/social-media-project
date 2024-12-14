@@ -15,6 +15,7 @@ import {
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useLoading } from '../../common/appContext/loadingContext';
+import { cloudName, uploadPreset } from '../../common/constants/params';
 
 const CreatePostContainer: FC = () => {
   const [createPost, setCreatePost] = useState(true);
@@ -84,30 +85,9 @@ const CreatePostContainer: FC = () => {
   };
 
 
-
-  const checkTouchDevice = () => {
-    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    const hasPointerEvents = window.matchMedia('(pointer: coarse)').matches;
-    const userAgent = navigator.userAgent.toLowerCase();
-
-    const isMobile = /mobile|tablet|ip(ad|hone|od)|android/i.test(userAgent);
-
-    return (hasTouch && hasPointerEvents) || isMobile;
-  };
-
-
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-
-  useEffect(() => {
-    const result = checkTouchDevice();
-    if (isTouchDevice !== result) {
-      setIsTouchDevice(result);
-    }
-  }, [isTouchDevice]);
-
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1025 && isTouchDevice) {
+      if (window.innerWidth < 1025) {
         setMobileDevice(true);
       }
     }
@@ -158,8 +138,7 @@ const CreatePostContainer: FC = () => {
   const collectionsRef = collection(db, "posts");
   const postRef = doc(collection(db, "posts"));
   const document = postRef.id;
-  const cloudName = "dogyht9rh";
-  const uploadPreset = "socio-media";
+
 
   const submitImageOrVideo = async () => {
 
