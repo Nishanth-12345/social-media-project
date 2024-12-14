@@ -1,15 +1,13 @@
 import React, { ChangeEvent, FC, FormEvent, KeyboardEvent, useContext, useEffect, useState } from 'react'
-
-import { imageData } from '../../common/data/imageData';
-import GoogleSignIn from './pages/googleSignin';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../common/firebase/firebase';
 import { AuthContext } from '../../common/appContext/appContext';
 import { useNavigate } from 'react-router-dom';
 import Register from './pages/register';
+import { useLoading } from '../../common/appContext/loadingContext';
 
 const RegisterContainer: FC = () => {
-  const [loading, setLoading] = useState<boolean>(false);
+  const {setLoading} = useLoading();
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -58,12 +56,8 @@ const RegisterContainer: FC = () => {
    
   return (
     <div>
-      <GoogleSignIn
-        imageData={imageData}
-      />
       <Register 
          handleName={handleName}
-         loading={loading}
          handleLogin={handleSubmit}
          handleEmail={handleEmail}
          handlePassword={handlePassword}

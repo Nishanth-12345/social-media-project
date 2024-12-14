@@ -4,7 +4,7 @@ import { images } from '../../constants/image';
 
 interface ProfileDetailProps {
     name?: string;
-    image: string;
+    image?: string|null;
     className?: string;
 }
 
@@ -14,7 +14,7 @@ const ProfileDetail: FC<ProfileDetailProps> = (props) => {
     return (
         <div className={`profile-detail ${className ? className : ''}`}>
             <div className='image'>
-                <img src={image} alt='profile' />
+             { image!==null ? <img src={image} alt='profile' /> : <p>no image</p>}
             </div>
             <div className='details'>
                 <p>Welcome Back,</p>

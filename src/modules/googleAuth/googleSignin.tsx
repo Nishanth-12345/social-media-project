@@ -1,8 +1,9 @@
 import React, { ChangeEvent, FC, useContext } from 'react';
 import './styles.scss'
-import { ImageData } from '../../../common/data/imageData';
-import { IconSvg, images } from '../../../common/constants/image';
-import { AuthContext } from '../../../common/appContext/appContext'
+import { AuthContext } from '../../common/appContext/appContext';
+import { ImageData } from '../../common/data/imageData';
+import { IconSvg, images } from '../../common/constants/image';
+
 
 interface GoogleSignInProps {
   imageData: ImageData[];

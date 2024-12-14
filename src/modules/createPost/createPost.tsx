@@ -11,7 +11,7 @@ interface CreatePostProps {
   handleVideoCapture: (e: ChangeEvent<HTMLInputElement>) => void;
   handleCameraCapture: (e: ChangeEvent<HTMLInputElement>) => void;
   handleFileUpload: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleDescription: (e: ChangeEvent<HTMLDivElement>) => void;
+  handleDescription: (e: ChangeEvent<HTMLTextAreaElement>) => void;
   handleCreatePost: () => void;
 }
 
@@ -26,7 +26,7 @@ const CreatePost: FC<CreatePostProps> = (props) => {
     handleFileUpload,
     handleVideoCapture,
     handleCreatePost
-   } = props;
+  } = props;
 
 
 
@@ -34,17 +34,15 @@ const CreatePost: FC<CreatePostProps> = (props) => {
     <div className='create-post-container container'>
       <NavigateBack path='New Post' />
       <div className='post-container'>
+        <div className='description-container'>
+          <textarea
+            onChange={handleDescription}
+            value={postDescription}
+            placeholder="What's on your mind?"
 
-        <div
-          contentEditable
-          suppressContentEditableWarning
-          onInput={handleDescription}
-          className='text-desc'
-          placeholder="What's on your mind?"
- 
-        >
+          />
 
-          <div style={{ marginTop: "10px", fontSize: "16px", color: "#333" }}>
+          <div className='text-desc'>
             {descriptionText}
           </div>
         </div>
@@ -108,7 +106,7 @@ const CreatePost: FC<CreatePostProps> = (props) => {
       <div id="previewContainer" style={{ display: 'flex', flexWrap: 'wrap', marginTop: '20px' }}></div>
 
       <div className='profile-edit-btn'>
-        <button className='create' onClick={handleCreatePost}>
+        <button className='create'>
           <p>Create</p>
         </button>
       </div>

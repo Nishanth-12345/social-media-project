@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
     align-items: center;
     margin-bottom: 26px;
 
@@ -42,6 +43,14 @@
 
             &.bg-default {
                 background-color: #E9F6FB;
+            }
+
+            &.bg-l-blue {
+                background-color: #E7F1FD;
+            }
+
+            &.bg-blue {
+                background-color: #ECF5FA;
             }
         }
 
@@ -87,7 +96,8 @@
             position: absolute;
             z-index: 10;
             top: 10px;
-            right: 12px;
+            background: #efefef;
+            right: 0px;
 
             &:active {
                 svg {

@@ -8,8 +8,11 @@ interface NavigateBackProps {
 
 const NavigateBack: FC<NavigateBackProps> = (props) => {
     const {path } = props;
+    const handleNavigateBack = () => {
+      window.history.back();
+  };
     return (
-        <div className='navigation'>
+        <div className='navigation' onClick={handleNavigateBack}>
            <IconSvg.LeftArrowIcon />
            <p>{path}</p>
         </div>

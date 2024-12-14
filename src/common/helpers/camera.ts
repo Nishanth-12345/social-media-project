@@ -86,7 +86,7 @@ export const useWindowSize = (): [number, number] => {
   
       window.addEventListener('resize', handleResize);
   
-      // Cleanup on unmount
+ 
       return () => {
         window.removeEventListener('resize', handleResize);
       };

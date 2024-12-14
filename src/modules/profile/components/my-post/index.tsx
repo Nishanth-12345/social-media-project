@@ -5,18 +5,20 @@ import './styles.scss';
 interface MyPostProps {
     desc: string;
     likes: number;
-    images: string[] | string;
+    imageType:"camera"|"video"|null;
+    images: string[];
 }
 
 const MyPost: FC<MyPostProps> = (props) => {
-    const { desc, likes, images } = props;
+    const { desc, likes, images, imageType } = props;
 
     return (
         <div className='user-post-card'>
-            <img src={
-                Array.isArray(images) ? images[0]
-                    : images
-            } alt='post' />
+           {imageType === "camera" ? (
+                <img src={images[0]} alt="post" />
+            ) : imageType === "video" ? (
+                <video className='video' src={images[0]} />
+            ) : null}
             <div className='details'>
                 <p>{desc}</p>
                 <div className='likes'>
@@ -25,7 +27,7 @@ const MyPost: FC<MyPostProps> = (props) => {
                 </div>
             </div>
             {
-                Array.isArray(images) ? <div className='count'>
+                images.length > 1 ? <div className='count'>
                     <span>1/{images.length}</span>
                 </div> : null
             }

@@ -1,22 +1,20 @@
-.profile-banner{
+.profile-banner {
     width: 100%;
     height: auto;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     position: relative;
 
-    >  .edit-option{
-       bottom:12px;
-       right: 12px;
-    }
- 
-
-    img{
+    .background-wallpaper{
         width: 100%;
         height: 150px;
+        background-color: #9e9c9c;
+        position: relative;
     }
-
-    .edit-option{
+    .add-photo{
+        position: relative;
+    }
+    .add-option{
         width: 32px;
         height: 32px;
         background-color: #F4F4F4;
@@ -25,16 +23,69 @@
         justify-content: center;
         position: absolute;
         border-radius: 50%;
-   
+        z-index: 100;
+        bottom: 12px;
+        right: 12px;
+
+        .file {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+
+        svg {
+            width: 16px;
+            height: 16px;
+            path {
+              stroke: #000;
+            }
+        }
+    }
+
+    >.edit-option {
+        bottom: 12px;
+        right: 12px;
+    }
+
+
+    img {
+        width: 100%;
+        height: 150px;
+    }
+
+    .edit-option {
+        width: 32px;
+        height: 32px;
+        background-color: #F4F4F4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        border-radius: 50%;
+
         z-index: 100;
 
-        svg{
+        
+
+        .file {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+
+        svg {
             width: 16px;
             height: 16px;
         }
     }
 
-    .profile-image{
+    .profile-image {
 
         width: 112px;
         height: auto;
@@ -43,22 +94,28 @@
         bottom: -10px;
         z-index: 100;
 
-        img{
+
+        img {
             width: 100%;
             height: 100%;
         }
 
-        &.edit-image{
+        .avatar{
+            width: 100%;
+            height: 100%;
+        }
+
+        &.edit-image {
             bottom: -26%;
 
-            > .edit-option{
+            >.edit-option {
                 right: 0;
                 top: 60%;
             }
         }
     }
 
-    .edit-btn{
+    .edit-btn {
         width: 208px;
         height: 32px;
         display: flex;
@@ -75,33 +132,34 @@
 }
 
 
-.description{
+.description {
     margin-bottom: 24px;
-    > h1 {
+
+    >h1 {
         font-size: 24px;
         font-weight: 800;
         font-family: 'kumbh';
         margin-bottom: 6px;
     }
 
-    > p{
+    >p {
         font-size: 14px;
         line-height: 18px;
         font-family: 'kumbh';
     }
 }
 
-.profile-container{
+.profile-container {
     position: relative;
-
-    .container{
+     overflow: auto;
+    .container {
         padding-top: 20px;
     }
 }
 
 
-.user-posts-container{
-    > p {
+.user-posts-container {
+    >p {
         font-size: 18px;
         font-weight: 600;
         line-height: 22px;
@@ -109,7 +167,7 @@
         margin-bottom: 11px;
     }
 
-    .user-posts{
+    .user-posts {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
@@ -118,31 +176,32 @@
 
 
 
-.input-edit-container{
+.input-edit-container {
     margin-top: 60px;
     flex: 1;
     display: flex;
     flex-direction: column;
 
-    > * {
+    >* {
         margin-bottom: 16px;
     }
 
-    .input-field{
+    .input-field {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
 
-        label{
-           font-size: 14px;
-           color: #000;
-           font-weight: 400;
-           font-family: 'kumbh'; 
-           margin-bottom: 9px;
+        label {
+            font-size: 14px;
+            color: #000;
+            font-weight: 400;
+            font-family: 'kumbh';
+            margin-bottom: 9px;
         }
 
-        input,textarea{
+        input,
+        textarea {
             width: 100%;
             max-width: 400px;
             border: none;
@@ -154,21 +213,21 @@
             font-weight: 600;
         }
 
-        textarea{
+        textarea {
             overflow: hidden;
             resize: none;
         }
     }
 }
 
-.save-profile{
+.save-profile {
     margin: 20px;
     padding: 14px;
     width: 100%;
     background-color: #000;
     border-radius: 36px;
 
-    p{
+    p {
         color: #fff;
         font-family: 'karla';
         font-weight: 700;
@@ -177,9 +236,9 @@
 }
 
 
-.edit-profile-container{
+.edit-profile-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    
+
 }

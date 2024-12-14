@@ -4,9 +4,10 @@ import Login from './login'
 import { useNavigate } from 'react-router-dom';
 import { auth, onAuthStateChanged } from '../../common/firebase/firebase';
 import { AuthContext } from '../../common/appContext/appContext';
+import { useLoading } from '../../common/appContext/loadingContext';
 
 const LoginContainer: FC = () => {
-    const [loading, setLoading] = useState<boolean>(false);
+    const {setLoading} = useLoading();
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const navigate = useNavigate();
@@ -51,7 +52,6 @@ const LoginContainer: FC = () => {
     return (
         <div>
             <Login
-                loading={loading}
                 handleLogin={handleSubmit}
                 handleEmail={handleEmail}
                 handlePassword={handlePassword}

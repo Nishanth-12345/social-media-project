@@ -1,8 +1,9 @@
 import React, { ChangeEvent, FC, FormEvent } from 'react'
 import './styles.scss'
+import { Link } from 'react-router-dom';
 
 interface RegisterProps {
-    loading: boolean;
+    
     handleLogin: (e: FormEvent<HTMLFormElement>) => void;
     handleName: (e: ChangeEvent<HTMLInputElement>) => void;
     handleEmail: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -13,7 +14,7 @@ interface RegisterProps {
 }
 
 const Register: FC<RegisterProps> = (props) => {
-    const { loading, handleLogin, handleEmail, handlePassword, handleName, name, email, password } = props;
+    const { handleLogin, handleEmail, handlePassword, handleName, name, email, password } = props;
     return (
         <div className='login-container'>
             <h1>Register</h1>
@@ -32,6 +33,8 @@ const Register: FC<RegisterProps> = (props) => {
                 </div>
                 <button className='submit' type='submit'>Login</button>
             </form>
+            <p className='sign-in'> Already registered? <Link to={'/login'}>Sign in</Link>
+            </p>
         </div>
     )
 }

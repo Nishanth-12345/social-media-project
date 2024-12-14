@@ -9,6 +9,8 @@ export interface UserData {
   email: string;
   image?: string;
   authProvider?: string;
+  backgroundImage?:string;
+  bio?:string;
 }
 export interface AuthContextType {
   signInWithGoogle: () => Promise<void>;
@@ -46,7 +48,9 @@ const AppContext: FC<AppContextProps> = ({ children }) => {
           name: user.displayName,
           email: user.email,
           image: user.photoURL,
-          authProvider: popup.providerId
+          authProvider: popup.providerId,
+          backgroundImage:'',
+          bio:'',
         });
       }
     } catch (error) {
@@ -76,7 +80,9 @@ const AppContext: FC<AppContextProps> = ({ children }) => {
         uid: user.uid,
         name,
         providerId: "email/password",
-        email: user.email
+        email: user.email,
+        backgroundImage:'',
+        bio:'',
       })
 
     } catch (err) {
@@ -109,6 +115,8 @@ const AppContext: FC<AppContextProps> = ({ children }) => {
             name: docData.name,
             email: docData.email,
             image: docData.image,
+            bio: docData.bio,
+            backgroundImage:docData.backgroundImage,
             authProvider: docData.authProvider,
           };
           setUserData(userData);
@@ -126,7 +134,6 @@ const AppContext: FC<AppContextProps> = ({ children }) => {
   useEffect(() => {
     userState();
  
-
     return () => {
       userState();
     }

@@ -1,7 +1,22 @@
 .home{
     position: relative;
-    .profile{
+    padding-top: 20px;
+    .top-section{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-bottom: 30px;
+    }
+
+    .sign-out{
+        background-color: #000;
+        color: #fff;
+        border-radius: 24px;
+        padding: 4px 8px;
+    }
+    
+    .profile{
+    
     }
 
     h1{

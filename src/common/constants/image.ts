@@ -22,6 +22,7 @@ import { ReactComponent as PhotoIcon } from '../../assets/icons/photo.svg';
 import { ReactComponent as VideoIcon } from '../../assets/icons/video-icon.svg';
 import { ReactComponent as CameraIcon } from '../../assets/icons/camera-icon.svg';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/delete-icon.svg';
+import { ReactComponent as AvatarIcon } from '../../assets/icons/avatar.svg';
 
 export const IconSvg: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
     ArrowDownIcon: ArrowDownIcon,
@@ -46,7 +47,8 @@ export const IconSvg: { [key: string]: FC<SVGProps<SVGSVGElement>> } = {
     FolderOpenIcon: FolderOpenIcon,
     PhotoIcon: PhotoIcon,
     VideoIcon: VideoIcon,
-    DeleteIcon: DeleteIcon
+    DeleteIcon: DeleteIcon,
+    AvatarIcon: AvatarIcon
 }
 
 export const images: { [key: string]: string } = {
