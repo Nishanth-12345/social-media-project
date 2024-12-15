@@ -23,7 +23,7 @@ const EditProfile: FC<EditProfileProps> = (props) => {
   const [bio, setBio] = useState('');
   const [profileImage, setProfileImage] = useState<File | null>(null);
   const [backgroundImage, setBackgroundImage] = useState<File | null>(null);
-  
+
 
   const navigate = useNavigate();
 
@@ -114,50 +114,50 @@ const EditProfile: FC<EditProfileProps> = (props) => {
 
 
   return (
-    <div className='edit-profile-container'>
-      <div className='profile-banner'
-
-      >
-        <div className='profile-image edit-image'>
-        {profileImage || userData?.image ?  <img src={profileImage ? URL.createObjectURL(profileImage) : userData?.image} alt="profile" />:<IconSvg.AvatarIcon className='avatar'/>}
+    <div>
+      <div className='edit-profile-container'>
+        <div className='profile-banner'
+        >
+          <div className='profile-image edit-image'>
+            {profileImage || userData?.image ? <img src={profileImage ? URL.createObjectURL(profileImage) : userData?.image} alt="profile" /> : <IconSvg.AvatarIcon className='avatar' />}
+            <div className='edit-option'>
+              <input type="file" onChange={handleProfileImageChange} className='file' />
+              <IconSvg.EditIcon />
+            </div>
+          </div>
+          {backgroundImage || userData?.backgroundImage ? <img src={backgroundImage ? URL.createObjectURL(backgroundImage) : userData?.backgroundImage} alt="wallpaper" /> : <div className='background-wallpaper'></div>}
           <div className='edit-option'>
-            <input type="file" onChange={handleProfileImageChange} className='file' />
+            <input type="file" onChange={handleBackgroundImageChange} className='file' />
             <IconSvg.EditIcon />
           </div>
         </div>
-        {backgroundImage || userData?.backgroundImage ? <img src={backgroundImage ? URL.createObjectURL(backgroundImage) : userData?.backgroundImage} alt="wallpaper" /> : <div className='background-wallpaper'></div>}
-        <div className='edit-option'>
-          <input type="file" onChange={handleBackgroundImageChange} className='file' />
-          <IconSvg.EditIcon />
+        <div className='input-edit-container container'>
+          <div className='input-field'>
+            <label>Name</label>
+            <input
+              type='text'
+              name='name'
+              value={name}
+              onChange={handleName}
+            />
+          </div>
+          <div className='input-field'>
+            <label>Bio</label>
+            <textarea
+              name='bio'
+              value={bio}
+              onChange={handleBio}
+            />
+          </div>
+        </div>
+        <div className='profile-edit-btn'>
+          <button className='save-profile' onClick={updateProfile}>
+            <p>Save</p>
+          </button>
         </div>
       </div>
-      <div className='input-edit-container container'>
-        <div className='input-field'>
-          <label>Name</label>
-          <input
-            type='text'
-            name='name'
-            value={name}
-            onChange={handleName}
-          />
-        </div>
-        <div className='input-field'>
-          <label>Bio</label>
-          <textarea
-            name='bio'
-            value={bio}
-            onChange={handleBio}
-          />
-        </div>
       </div>
-      <div className='profile-edit-btn'>
-        <button className='save-profile' onClick={updateProfile}>
-          <p>Save</p>
-        </button>
-      </div>
-
-    </div>
-  )
+      )
 }
 
 export default EditProfile

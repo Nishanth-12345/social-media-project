@@ -8,10 +8,11 @@ interface PostPreviewProps {
     type: "video" | "camera";
     handleCameraCapture: (e: ChangeEvent<HTMLInputElement>) => void;
     handleCreatePost: () => void;
+    deletePost:() =>void;
 }
 
 const PostPreview: FC<PostPreviewProps> = (props) => {
-    const { images, desc, type, handleCameraCapture, handleCreatePost } = props;
+    const { images, desc, type, handleCameraCapture, handleCreatePost, deletePost} = props;
     const [slideIndex, setSlideIndex] = useState(0);
     const [width, setWidth] = useState(1);
     const [dragging, setDragging] = useState<boolean>(false);
@@ -93,7 +94,7 @@ const PostPreview: FC<PostPreviewProps> = (props) => {
                     <div className='count'>
                         <p>{slideIndex + 1}/{images.length}</p>
                     </div>
-                    <div className='delete'>
+                    <div className='delete' onClick={deletePost}>
                         <IconSvg.DeleteIcon />
                     </div>
                     <div className='indicators'>

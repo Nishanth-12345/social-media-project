@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useContext } from 'react';
+import React, { ChangeEvent, FC, useContext, useEffect, useState } from 'react';
 import './styles.scss'
 import { AuthContext } from '../../common/appContext/appContext';
 import { ImageData } from '../../common/data/imageData';
@@ -20,7 +20,18 @@ const GoogleSignIn: FC<GoogleSignInProps> = (props) => {
   }
 
   const { signInWithGoogle } = authContext;
+  const [bottomOffset, setBottomOffset] = useState<number>(0);
 
+  // useEffect(() => {
+  //   const updateOffset = () => {
+  //     const height = window.innerHeight;
+  //     setBottomOffset(height * 0.1 - 123);
+  //   };
+  //   updateOffset();
+  //   window.addEventListener('resize', updateOffset);
+  //   return () => window.removeEventListener('resize', updateOffset);
+  // }, []);
+  
 
   return (
     <div className='GoogleSignIn-container'>

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useContext, useEffect, useReducer, useRef, useState } from 'react'
+import React, { ChangeEvent, FC, useCallback, useContext, useEffect, useReducer, useRef, useState } from 'react'
 import CreatePost from './createPost'
 import PostPreview from './postPreview';
 import { images } from '../../common/constants/image';
@@ -140,7 +140,7 @@ const CreatePostContainer: FC = () => {
   const document = postRef.id;
 
 
-  const submitImageOrVideo = async () => {
+  const submitImageOrVideo = useCallback(async () => {
 
     const image = fileMode === "camera" ? cameraFiles : videoFiles;
     let uploadedUrls: string[] = [];
@@ -200,7 +200,17 @@ const CreatePostContainer: FC = () => {
       console.error("Error uploading media:", error);
       alert("Failed to upload media. Please try again.");
     }
-  };
+  },[fileMode, cameraFiles, videoFiles, setLoading, navigate]);
+
+
+  const deleteMedia = () => {
+    setCameraFiles([]);
+    setVideoFiles(null);
+    setPreviewMedia([]);
+    setPreviewImages([]);
+    setDescription("");
+    setCreatePost(true);
+  }
 
 
 
@@ -223,6 +233,7 @@ const CreatePostContainer: FC = () => {
     handleCameraCapture={handleCameraCapture}
     desc={description}
     handleCreatePost={submitImageOrVideo}
+    deletePost={deleteMedia}
   />
 }
 

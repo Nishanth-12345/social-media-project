@@ -54,7 +54,7 @@ export const UserPost: FC<UserPostProps> = (props) => {
     throw new Error("AuthContext is not provided!");
 
   }
-  const [postUrl] = useState<string>(`${localUrl}post/${id}`);
+  const [postUrl] = useState<string>(`${window.location.origin}/post/${id}`);
 
   const { user } = authContext;
   const { state, dispatch } = usePosts();

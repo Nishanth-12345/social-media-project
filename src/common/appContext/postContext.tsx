@@ -50,11 +50,7 @@ export const PostProvider: FC<PostProviderProps> = ({ children }) => {
 
         };
 
-
-        return () => {
-            
-            fetchPosts();
-        }
+        fetchPosts();
     }, []);
     return (
         <PostContext.Provider value={{ state, dispatch }}>

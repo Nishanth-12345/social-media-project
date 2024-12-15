@@ -1,15 +1,8 @@
-import React, { FC, useContext, useReducer } from 'react'
+import React, { FC, useContext } from 'react'
 import Home from './home'
 import { AuthContext } from '../../common/appContext/appContext';
-import { postActions, PostsReducer } from '../../common/appContext/postReducer';
 import { usePosts } from '../../common/appContext/postContext';
-import { collection, deleteDoc, doc, getDocs, query, setDoc, updateDoc, where } from 'firebase/firestore';
-import { db } from '../../common/firebase/firebase';
 
-const initialState = {
-  posts: [], 
-  error: false,
-};
 
 const HomeContainer:FC = () => {
    const authContext = useContext(AuthContext);

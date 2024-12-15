@@ -24,7 +24,6 @@ interface HomeProps {
 
 const Home: FC<HomeProps> = (props) => {
   const { signout, user, userData, posts, error} = props;
-  const [sharePost, setSharePost] = useState<boolean>(false);
 
   const navigate = useNavigate();
 

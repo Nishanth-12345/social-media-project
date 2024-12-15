@@ -14,20 +14,17 @@ import GoogleAuthContainer from './modules/googleAuth/googleAuthContainer';
 import { LoadingProvider } from './common/appContext/loadingContext';
 import GlobalLoader from './common/components/loader/globalLoader';
 
-
-
 function App() {
-
 
   return (
 
     <Router>
       <PostProvider>
-      <AppContext>
-        <LoadingProvider>
-            <GlobalLoader /> 
+        <AppContext>
+          <LoadingProvider>
+            <GlobalLoader />
             <Routes>
-             <Route path="/*" element={<Navigate to="/" />}/>
+              <Route path="/*" element={<Navigate to="/" />} />
               <Route path='/register' element={<RegisterContainer />} />
               <Route path='/' element={<HomeContainer />} />
               <Route path='/google-sign-in' element={<GoogleAuthContainer />} />
@@ -36,7 +33,7 @@ function App() {
               <Route path='/create-post' element={<CreatePostContainer />} />
               <Route path='/login' element={<LoginContainer />} />
             </Routes>
-        </LoadingProvider>
+          </LoadingProvider>
         </AppContext>
       </PostProvider>
     </Router>

@@ -20,6 +20,9 @@ body {
   font-size: 16px; // Default font size for paragraphs
   color: #333; // Default text color
   height: 100vh;
+  margin: 0;
+  padding: 0;
+
 }
 
 h1,
@@ -90,6 +93,6 @@ a{
 @media (max-width: 450px) {
 
   .container {
-    padding: 0 14x;
+    padding: 0 23px;
   }
 }
