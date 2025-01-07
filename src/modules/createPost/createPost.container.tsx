@@ -213,7 +213,6 @@ const CreatePostContainer: FC = () => {
   }
 
 
-
   return createPost ? (
 
     <CreatePost

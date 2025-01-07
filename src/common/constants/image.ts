@@ -67,8 +67,9 @@ export const images: { [key: string]: string } = {
     userPost2: require('../../assets/images/user-post-2.png'),
     wallpaper: require('../../assets/images/wallpaper.png'),
     img: require('../../assets/images/profile-img.png'),
-    postImage:  require('../../assets/images/color-image.png'),
-    girlImage:  require('../../assets/images/girl-image-1.png'), 
-    parachute:  require('../../assets/images/parachute.png'),
-    newPostImg:  require('../../assets/images/new-post.png'),
+    postImage: require('../../assets/images/color-image.png'),
+    girlImage: require('../../assets/images/girl-image-1.png'),
+    parachute: require('../../assets/images/parachute.png'),
+    newPostImg: require('../../assets/images/new-post.png'),
+    backgroundImg: require('../../assets/images/social-media-background.jpg'),
 }

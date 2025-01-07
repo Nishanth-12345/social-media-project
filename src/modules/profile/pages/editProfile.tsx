@@ -125,11 +125,15 @@ const EditProfile: FC<EditProfileProps> = (props) => {
               <IconSvg.EditIcon />
             </div>
           </div>
-          {backgroundImage || userData?.backgroundImage ? <img src={backgroundImage ? URL.createObjectURL(backgroundImage) : userData?.backgroundImage} alt="wallpaper" /> : <div className='background-wallpaper'></div>}
-          <div className='edit-option'>
+          <div className='background'>
+          {backgroundImage || userData?.backgroundImage ? <img src={backgroundImage ? URL.createObjectURL(backgroundImage) : userData?.backgroundImage} alt="wallpaper" /> : <div className='background-wallpaper'> 
+            </div>}
+          <div className='add-option'>
             <input type="file" onChange={handleBackgroundImageChange} className='file' />
             <IconSvg.EditIcon />
           </div>
+          </div>
+      
         </div>
         <div className='input-edit-container container'>
           <div className='input-field'>

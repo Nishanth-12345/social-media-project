@@ -39,7 +39,6 @@ const CreatePost: FC<CreatePostProps> = (props) => {
             onChange={handleDescription}
             value={postDescription}
             placeholder="What's on your mind?"
-
           />
 
           <div className='text-desc'>
@@ -78,7 +77,8 @@ const CreatePost: FC<CreatePostProps> = (props) => {
                 <p>Camera</p>
               </div>
             </div>) :
-            (<div className='select-folder'>
+            (
+            <div className='select-folder'>
               <div className='option' >
                 <IconSvg.FolderOpenIcon />
                 <p>Choose the file</p>
